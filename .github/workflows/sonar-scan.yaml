@@ -1,7 +1,3 @@
-#Github actions flow for Sonarqube Scan, this will be triggered whenever there is a push.
-#Github actions are completely event driven.
-# this is just a simple script to create a war file
-          
 name: CI/CD workflow for Maven Build and Sonar Code scan
 on:
   push:
@@ -26,11 +22,10 @@ jobs:
       with:
         projectBaseDir: .
         args: >
+          -Dsonar.organization=my-org
           -Dsonar.projectKey=my-Java-web-app
+          -Dsonar.java.binaries=target
+          -Dsonar.javaOpts="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-    #   # Check the Quality Gate status.
-    # - name: SonarQube Quality Gate check
-    #   id: sonarqube-quality-gate-check
-    #   uses: sonarsource/sonarqube-quality-gate-action@master
