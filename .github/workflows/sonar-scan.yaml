@@ -1,5 +1,5 @@
 #Github actions flow for Sonarqube Scan, this will be triggered whenever there is a push.
-#Fithub actions are completely event driven
+#Github actions are completely event driven
 
           
 name: CI/CD workflow for Maven Build and Sonar Code scan
