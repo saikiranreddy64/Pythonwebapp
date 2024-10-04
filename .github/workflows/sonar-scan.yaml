@@ -1,6 +1,6 @@
 #Github actions flow for Sonarqube Scan, this will be triggered whenever there is a push.
 #Github actions are completely event driven.
-
+# this is just a simple script to create a war file
           
 name: CI/CD workflow for Maven Build and Sonar Code scan
 on:
